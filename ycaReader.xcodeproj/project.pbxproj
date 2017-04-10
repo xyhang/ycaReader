@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C163AAA1E9B46CB008F4557 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C163AA91E9B46CB008F4557 /* main.m */; };
+		2C163AAD1E9B46CB008F4557 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C163AAC1E9B46CB008F4557 /* AppDelegate.m */; };
+		2C163AB01E9B46CB008F4557 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C163AAF1E9B46CB008F4557 /* ViewController.m */; };
+		2C163AB31E9B46CB008F4557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C163AB11E9B46CB008F4557 /* Main.storyboard */; };
+		2C163AB51E9B46CB008F4557 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C163AB41E9B46CB008F4557 /* Assets.xcassets */; };
+		2C163AB81E9B46CB008F4557 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C163AB61E9B46CB008F4557 /* LaunchScreen.storyboard */; };
+		2C163AC31E9B46CB008F4557 /* ycaReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C163AC21E9B46CB008F4557 /* ycaReaderTests.m */; };
+		2C163ACE1E9B46CB008F4557 /* ycaReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C163ACD1E9B46CB008F4557 /* ycaReaderUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2C163ABF1E9B46CB008F4557 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C163A9D1E9B46CB008F4557 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C163AA41E9B46CB008F4557;
+			remoteInfo = ycaReader;
+		};
+		2C163ACA1E9B46CB008F4557 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C163A9D1E9B46CB008F4557 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C163AA41E9B46CB008F4557;
+			remoteInfo = ycaReader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2C163AA51E9B46CB008F4557 /* ycaReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ycaReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C163AA91E9B46CB008F4557 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C163AAB1E9B46CB008F4557 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2C163AAC1E9B46CB008F4557 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2C163AAE1E9B46CB008F4557 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2C163AAF1E9B46CB008F4557 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2C163AB21E9B46CB008F4557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2C163AB41E9B46CB008F4557 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C163AB71E9B46CB008F4557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2C163AB91E9B46CB008F4557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C163ABE1E9B46CB008F4557 /* ycaReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ycaReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C163AC21E9B46CB008F4557 /* ycaReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ycaReaderTests.m; sourceTree = "<group>"; };
+		2C163AC41E9B46CB008F4557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C163AC91E9B46CB008F4557 /* ycaReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ycaReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C163ACD1E9B46CB008F4557 /* ycaReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ycaReaderUITests.m; sourceTree = "<group>"; };
+		2C163ACF1E9B46CB008F4557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C163AA21E9B46CB008F4557 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C163ABB1E9B46CB008F4557 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C163AC61E9B46CB008F4557 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C163A9C1E9B46CB008F4557 = {
+			isa = PBXGroup;
+			children = (
+				2C163AA71E9B46CB008F4557 /* ycaReader */,
+				2C163AC11E9B46CB008F4557 /* ycaReaderTests */,
+				2C163ACC1E9B46CB008F4557 /* ycaReaderUITests */,
+				2C163AA61E9B46CB008F4557 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2C163AA61E9B46CB008F4557 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C163AA51E9B46CB008F4557 /* ycaReader.app */,
+				2C163ABE1E9B46CB008F4557 /* ycaReaderTests.xctest */,
+				2C163AC91E9B46CB008F4557 /* ycaReaderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C163AA71E9B46CB008F4557 /* ycaReader */ = {
+			isa = PBXGroup;
+			children = (
+				2C163AAB1E9B46CB008F4557 /* AppDelegate.h */,
+				2C163AAC1E9B46CB008F4557 /* AppDelegate.m */,
+				2C163AAE1E9B46CB008F4557 /* ViewController.h */,
+				2C163AAF1E9B46CB008F4557 /* ViewController.m */,
+				2C163AB11E9B46CB008F4557 /* Main.storyboard */,
+				2C163AB41E9B46CB008F4557 /* Assets.xcassets */,
+				2C163AB61E9B46CB008F4557 /* LaunchScreen.storyboard */,
+				2C163AB91E9B46CB008F4557 /* Info.plist */,
+				2C163AA81E9B46CB008F4557 /* Supporting Files */,
+			);
+			path = ycaReader;
+			sourceTree = "<group>";
+		};
+		2C163AA81E9B46CB008F4557 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C163AA91E9B46CB008F4557 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2C163AC11E9B46CB008F4557 /* ycaReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C163AC21E9B46CB008F4557 /* ycaReaderTests.m */,
+				2C163AC41E9B46CB008F4557 /* Info.plist */,
+			);
+			path = ycaReaderTests;
+			sourceTree = "<group>";
+		};
+		2C163ACC1E9B46CB008F4557 /* ycaReaderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2C163ACD1E9B46CB008F4557 /* ycaReaderUITests.m */,
+				2C163ACF1E9B46CB008F4557 /* Info.plist */,
+			);
+			path = ycaReaderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C163AA41E9B46CB008F4557 /* ycaReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C163AD21E9B46CB008F4557 /* Build configuration list for PBXNativeTarget "ycaReader" */;
+			buildPhases = (
+				2C163AA11E9B46CB008F4557 /* Sources */,
+				2C163AA21E9B46CB008F4557 /* Frameworks */,
+				2C163AA31E9B46CB008F4557 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ycaReader;
+			productName = ycaReader;
+			productReference = 2C163AA51E9B46CB008F4557 /* ycaReader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2C163ABD1E9B46CB008F4557 /* ycaReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C163AD51E9B46CB008F4557 /* Build configuration list for PBXNativeTarget "ycaReaderTests" */;
+			buildPhases = (
+				2C163ABA1E9B46CB008F4557 /* Sources */,
+				2C163ABB1E9B46CB008F4557 /* Frameworks */,
+				2C163ABC1E9B46CB008F4557 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C163AC01E9B46CB008F4557 /* PBXTargetDependency */,
+			);
+			name = ycaReaderTests;
+			productName = ycaReaderTests;
+			productReference = 2C163ABE1E9B46CB008F4557 /* ycaReaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2C163AC81E9B46CB008F4557 /* ycaReaderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C163AD81E9B46CB008F4557 /* Build configuration list for PBXNativeTarget "ycaReaderUITests" */;
+			buildPhases = (
+				2C163AC51E9B46CB008F4557 /* Sources */,
+				2C163AC61E9B46CB008F4557 /* Frameworks */,
+				2C163AC71E9B46CB008F4557 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C163ACB1E9B46CB008F4557 /* PBXTargetDependency */,
+			);
+			name = ycaReaderUITests;
+			productName = ycaReaderUITests;
+			productReference = 2C163AC91E9B46CB008F4557 /* ycaReaderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C163A9D1E9B46CB008F4557 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = yca;
+				TargetAttributes = {
+					2C163AA41E9B46CB008F4557 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					2C163ABD1E9B46CB008F4557 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2C163AA41E9B46CB008F4557;
+					};
+					2C163AC81E9B46CB008F4557 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2C163AA41E9B46CB008F4557;
+					};
+				};
+			};
+			buildConfigurationList = 2C163AA01E9B46CB008F4557 /* Build configuration list for PBXProject "ycaReader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C163A9C1E9B46CB008F4557;
+			productRefGroup = 2C163AA61E9B46CB008F4557 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C163AA41E9B46CB008F4557 /* ycaReader */,
+				2C163ABD1E9B46CB008F4557 /* ycaReaderTests */,
+				2C163AC81E9B46CB008F4557 /* ycaReaderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C163AA31E9B46CB008F4557 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C163AB81E9B46CB008F4557 /* LaunchScreen.storyboard in Resources */,
+				2C163AB51E9B46CB008F4557 /* Assets.xcassets in Resources */,
+				2C163AB31E9B46CB008F4557 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C163ABC1E9B46CB008F4557 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C163AC71E9B46CB008F4557 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C163AA11E9B46CB008F4557 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C163AB01E9B46CB008F4557 /* ViewController.m in Sources */,
+				2C163AAD1E9B46CB008F4557 /* AppDelegate.m in Sources */,
+				2C163AAA1E9B46CB008F4557 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C163ABA1E9B46CB008F4557 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C163AC31E9B46CB008F4557 /* ycaReaderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C163AC51E9B46CB008F4557 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C163ACE1E9B46CB008F4557 /* ycaReaderUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C163AC01E9B46CB008F4557 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C163AA41E9B46CB008F4557 /* ycaReader */;
+			targetProxy = 2C163ABF1E9B46CB008F4557 /* PBXContainerItemProxy */;
+		};
+		2C163ACB1E9B46CB008F4557 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C163AA41E9B46CB008F4557 /* ycaReader */;
+			targetProxy = 2C163ACA1E9B46CB008F4557 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2C163AB11E9B46CB008F4557 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C163AB21E9B46CB008F4557 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2C163AB61E9B46CB008F4557 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C163AB71E9B46CB008F4557 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C163AD01E9B46CB008F4557 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2C163AD11E9B46CB008F4557 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2C163AD31E9B46CB008F4557 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ycaReader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yca.ycaReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2C163AD41E9B46CB008F4557 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ycaReader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yca.ycaReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2C163AD61E9B46CB008F4557 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ycaReaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yca.ycaReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ycaReader.app/ycaReader";
+			};
+			name = Debug;
+		};
+		2C163AD71E9B46CB008F4557 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ycaReaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yca.ycaReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ycaReader.app/ycaReader";
+			};
+			name = Release;
+		};
+		2C163AD91E9B46CB008F4557 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ycaReaderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yca.ycaReaderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ycaReader;
+			};
+			name = Debug;
+		};
+		2C163ADA1E9B46CB008F4557 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ycaReaderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yca.ycaReaderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ycaReader;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C163AA01E9B46CB008F4557 /* Build configuration list for PBXProject "ycaReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C163AD01E9B46CB008F4557 /* Debug */,
+				2C163AD11E9B46CB008F4557 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C163AD21E9B46CB008F4557 /* Build configuration list for PBXNativeTarget "ycaReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C163AD31E9B46CB008F4557 /* Debug */,
+				2C163AD41E9B46CB008F4557 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2C163AD51E9B46CB008F4557 /* Build configuration list for PBXNativeTarget "ycaReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C163AD61E9B46CB008F4557 /* Debug */,
+				2C163AD71E9B46CB008F4557 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2C163AD81E9B46CB008F4557 /* Build configuration list for PBXNativeTarget "ycaReaderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C163AD91E9B46CB008F4557 /* Debug */,
+				2C163ADA1E9B46CB008F4557 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C163A9D1E9B46CB008F4557 /* Project object */;
+}
