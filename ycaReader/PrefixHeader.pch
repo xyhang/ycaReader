@@ -1,0 +1,503 @@
+//
+//  PrefixHeader.pch
+//  RooLive
+//
+//  Created by yan on 16/7/4.
+//  Copyright © 2016年 nawei. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "BookShelfManager.h"
+#import "NSArciverManager.h"
+
+#import "BookChapterModel.h"
+
+#import "MJExtension.h"
+#import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+
+#import "NSString+tool.h"
+//#import "GYDataCenter.h"
+#import "UIImage+tool.h"
+#import "UIView+tool.h"
+#import "NSData+GZIP.h"
+#import "UIColor+tool.h"
+#import "UIViewController+tool.h"
+#import "UIView+EmptyShow.h"
+//#import "UserInfo.h"
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKConnector/ShareSDKConnector.h>
+
+//腾讯开放平台（对应QQ和QQ空间）SDK头文件
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+#import "YCAHttpRequetTool.h"
+
+//微信SDK头文件
+#import "WXApi.h"
+
+//新浪微博SDK头文件
+#import "WeiboSDK.h"
+
+
+//新浪微博SDK头文件
+
+
+//** 沙盒路径 ***********************************************************************************
+#define PATH_OF_APP_HOME    NSHomeDirectory()
+#define PATH_OF_TEMP        NSTemporaryDirectory()
+#define PATH_OF_DOCUMENT    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
+
+/* ****************************************************************************************************************** */
+/** DEBUG LOG **/
+#ifdef DEBUG
+
+#define DLog( s, ... ) NSLog( @"< %@:(%d) > %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+
+#else
+
+#define DLog( s, ... )
+
+#endif
+
+
+/** DEBUG RELEASE **/
+#if DEBUG
+
+#define MCRelease(x)            [x release]
+
+#else
+
+#define MCRelease(x)            [x release], x = nil
+
+#endif
+
+
+/** NIL RELEASE **/
+#define NILRelease(x)           [x release], x = nil
+
+
+/* ****************************************************************************************************************** */
+#pragma mark - Frame (宏 x, y, width, height)
+
+// App Frame
+#define Application_Frame       [[UIScreen mainScreen] applicationFrame]
+
+// App Frame Height&Width
+#define App_Frame_Height        [[UIScreen mainScreen] applicationFrame].size.height
+#define App_Frame_Width         [[UIScreen mainScreen] applicationFrame].size.width
+
+// MainScreen Height&Width
+#define Main_Screen_Height      [[UIScreen mainScreen] bounds].size.height
+#define Main_Screen_Width       [[UIScreen mainScreen] bounds].size.width
+
+// View 坐标(x,y)和宽高(width,height)
+#define X(v)                    (v).frame.origin.x
+#define Y(v)                    (v).frame.origin.y
+#define WIDTH(v)                (v).frame.size.width
+#define HEIGHT(v)               (v).frame.size.height
+
+#define MinX(v)                 CGRectGetMinX((v).frame)
+#define MinY(v)                 CGRectGetMinY((v).frame)
+
+#define MidX(v)                 CGRectGetMidX((v).frame)
+#define MidY(v)                 CGRectGetMidY((v).frame)
+
+#define MaxX(v)                 CGRectGetMaxX((v).frame)
+#define MaxY(v)                 CGRectGetMaxY((v).frame)
+
+
+#define RECT_CHANGE_x(v,x)          CGRectMake(x, Y(v), WIDTH(v), HEIGHT(v))
+#define RECT_CHANGE_y(v,y)          CGRectMake(X(v), y, WIDTH(v), HEIGHT(v))
+#define RECT_CHANGE_point(v,x,y)    CGRectMake(x, y, WIDTH(v), HEIGHT(v))
+#define RECT_CHANGE_width(v,w)      CGRectMake(X(v), Y(v), w, HEIGHT(v))
+#define RECT_CHANGE_height(v,h)     CGRectMake(X(v), Y(v), WIDTH(v), h)
+#define RECT_CHANGE_size(v,w,h)     CGRectMake(X(v), Y(v), w, h)
+
+// 系统控件默认高度
+#define kStatusBarHeight        (20.f)
+
+#define kTopBarHeight           (44.f)
+#define kBottomBarHeight        (49.f)
+
+#define kCellDefaultHeight      (44.f)
+
+#define kEnglishKeyboardHeight  (216.f)
+#define kChineseKeyboardHeight  (252.f)
+
+
+/* ****************************************************************************************************************** */
+#pragma mark - Funtion Method (宏 方法)
+
+// PNG JPG 图片路径
+#define PNGPATH(NAME)           [[NSBundle mainBundle] pathForResource:[NSString stringWithUTF8String:NAME] ofType:@"png"]
+#define JPGPATH(NAME)           [[NSBundle mainBundle] pathForResource:[NSString stringWithUTF8String:NAME] ofType:@"jpg"]
+#define PATH(NAME, EXT)         [[NSBundle mainBundle] pathForResource:(NAME) ofType:(EXT)]
+
+// 加载图片
+#define PNGIMAGE(NAME)          [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:(NAME) ofType:@"png"]]
+#define JPGIMAGE(NAME)          [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:(NAME) ofType:@"jpg"]]
+#define IMAGE(NAME, EXT)        [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:(NAME) ofType:(EXT)]]
+
+// 字体大小(常规/粗体)
+#define BOLDSYSTEMFONT(FONTSIZE)[UIFont boldSystemFontOfSize:FONTSIZE]
+#define SYSTEMFONT(FONTSIZE)    [UIFont systemFontOfSize:FONTSIZE]
+#define FONT(NAME, FONTSIZE)    [UIFont fontWithName:(NAME) size:(FONTSIZE)]
+
+// 颜色(RGB)
+#define RGBCOLOR(r, g, b)       [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+#define RGBACOLOR(r, g, b, a)   [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+
+//number转String
+#define IntTranslateStr(int_str) [NSString stringWithFormat:@"%d",int_str];
+#define FloatTranslateStr(float_str) [NSString stringWithFormat:@"%.2d",float_str];
+
+// View 圆角和加边框
+#define ViewBorderRadius(View, Radius, Width, Color)\
+\
+[View.layer setCornerRadius:(Radius)];\
+[View.layer setMasksToBounds:YES];\
+[View.layer setBorderWidth:(Width)];\
+[View.layer setBorderColor:[Color CGColor]]
+
+// View 圆角
+#define ViewRadius(View, Radius)\
+\
+[View.layer setCornerRadius:(Radius)];\
+[View.layer setMasksToBounds:YES]
+
+// 当前版本
+#define FSystemVersion          ([[[UIDevice currentDevice] systemVersion] floatValue])
+#define DSystemVersion          ([[[UIDevice currentDevice] systemVersion] doubleValue])
+#define SSystemVersion          ([[UIDevice currentDevice] systemVersion])
+
+// 当前语言
+#define CURRENTLANGUAGE         ([[NSLocale preferredLanguages] objectAtIndex:0])
+
+// 是否Retina屏
+#define isRetina                ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? \
+CGSizeEqualToSize(CGSizeMake(640, 960), \
+[[UIScreen mainScreen] currentMode].size) : \
+NO)
+
+// 是否iPhone5
+#define isiPhone5               ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? \
+CGSizeEqualToSize(CGSizeMake(640, 1136), \
+[[UIScreen mainScreen] currentMode].size) : \
+NO)
+// 是否iPhone5
+#define isiPhone4               ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? \
+CGSizeEqualToSize(CGSizeMake(640, 960), \
+[[UIScreen mainScreen] currentMode].size) : \
+NO)
+
+// 是否IOS7
+#define isIOS7                  ([[[UIDevice currentDevice]systemVersion]floatValue] >= 7.0)
+// 是否IOS6
+#define isIOS6                  ([[[UIDevice currentDevice]systemVersion]floatValue] < 7.0)
+
+// 是否iPad
+#define isPad                   (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+// UIView - viewWithTag
+#define VIEWWITHTAG(_OBJECT, _TAG)\
+\
+[_OBJECT viewWithTag : _TAG]
+
+// 本地化字符串
+/** NSLocalizedString宏做的其实就是在当前bundle中查找资源文件名“Localizable.strings”(参数:键＋注释) */
+#define LocalString(x, ...)     NSLocalizedString(x, nil)
+/** NSLocalizedStringFromTable宏做的其实就是在当前bundle中查找资源文件名“xxx.strings”(参数:键＋文件名＋注释) */
+#define AppLocalString(x, ...)  NSLocalizedStringFromTable(x, @"someName", nil)
+
+// RGB颜色转换（16进制->10进制）
+#define UIColorFromRGB(rgbValue)\
+\
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 \
+alpha:1.0]
+
+#if TARGET_OS_IPHONE
+/** iPhone Device */
+#endif
+
+#if TARGET_IPHONE_SIMULATOR
+/** iPhone Simulator */
+#endif
+
+// ARC
+#if __has_feature(objc_arc)
+/** Compiling with ARC */
+#else
+/** Compiling without ARC */
+#endif
+
+
+/* ****************************************************************************************************************** */
+#pragma mark - Log Method (宏 LOG)
+
+// 日志 / 断点
+// =============================================================================================================================
+// DEBUG模式
+#define ITTDEBUG
+
+// LOG等级
+#define ITTLOGLEVEL_INFO        10
+#define ITTLOGLEVEL_WARNING     3
+#define ITTLOGLEVEL_ERROR       1
+
+// =============================================================================================================================
+// LOG最高等级
+#ifndef ITTMAXLOGLEVEL
+
+#ifdef DEBUG
+#define ITTMAXLOGLEVEL ITTLOGLEVEL_INFO
+#else
+#define ITTMAXLOGLEVEL ITTLOGLEVEL_ERROR
+#endif
+
+#endif
+
+// =============================================================================================================================
+// LOG PRINT
+// The general purpose logger. This ignores logging levels.
+#ifdef ITTDEBUG
+#define ITTDPRINT(xx, ...)      NSLog(@"< %s:(%d) > : " xx , __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#define ITTDPRINT(xx, ...)      ((void)0)
+#endif
+
+// Prints the current method's name.
+#define ITTDPRINTMETHODNAME()   ITTDPRINT(@"%s", __PRETTY_FUNCTION__)
+
+// Log-level based logging macros.
+#if ITTLOGLEVEL_ERROR <= ITTMAXLOGLEVEL
+#define ITTDERROR(xx, ...)      ITTDPRINT(xx, ##__VA_ARGS__)
+#else
+#define ITTDERROR(xx, ...)      ((void)0)
+#endif
+
+#if ITTLOGLEVEL_WARNING <= ITTMAXLOGLEVEL
+#define ITTDWARNING(xx, ...)    ITTDPRINT(xx, ##__VA_ARGS__)
+#else
+#define ITTDWARNING(xx, ...)    ((void)0)
+#endif
+
+#if ITTLOGLEVEL_INFO <= ITTMAXLOGLEVEL
+#define ITTDINFO(xx, ...)       ITTDPRINT(xx, ##__VA_ARGS__)
+#else
+#define ITTDINFO(xx, ...)       ((void)0)
+#endif
+
+// 条件LOG
+#ifdef ITTDEBUG
+#define ITTDCONDITIONLOG(condition, xx, ...)\
+\
+{\
+if ((condition))\
+{\
+ITTDPRINT(xx, ##__VA_ARGS__);\
+}\
+}
+#else
+#define ITTDCONDITIONLOG(condition, xx, ...)\
+\
+((void)0)
+#endif
+
+// 断点Assert
+#define ITTAssert(condition, ...)\
+\
+do {\
+if (!(condition))\
+{\
+[[NSAssertionHandler currentHandler]\
+handleFailureInFunction:[NSString stringWithFormat:@"< %s >", __PRETTY_FUNCTION__]\
+file:[[NSString stringWithUTF8String:__FILE__] lastPathComponent]\
+lineNumber:__LINE__\
+description:__VA_ARGS__];\
+}\
+} while(0)
+
+
+/* ****************************************************************************************************************** */
+#pragma mark - Constants (宏 常量)
+
+
+/** 时间间隔 */
+#define kHUDDuration            (1.f)
+
+/** 一天的秒数 */
+#define SecondsOfDay            (24.f * 60.f * 60.f)
+/** 秒数 */
+#define Seconds(Days)           (24.f * 60.f * 60.f * (Days))
+
+/** 一天的毫秒数 */
+#define MillisecondsOfDay       (24.f * 60.f * 60.f * 1000.f)
+/** 毫秒数 */
+#define Milliseconds(Days)      (24.f * 60.f * 60.f * 1000.f * (Days))
+
+
+//** textAlignment ***********************************************************************************
+
+#if !defined __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_5_0
+# define LINE_BREAK_WORD_WRAP UILineBreakModeWordWrap
+# define TextAlignmentLeft UITextAlignmentLeft
+# define TextAlignmentCenter UITextAlignmentCenter
+# define TextAlignmentRight UITextAlignmentRight
+
+#else
+# define LINE_BREAK_WORD_WRAP NSLineBreakByWordWrapping
+# define TextAlignmentLeft NSTextAlignmentLeft
+# define TextAlignmentCenter NSTextAlignmentCenter
+# define TextAlignmentRight NSTextAlignmentRight
+
+#endif
+
+
+#define RGBA(r,g,b,a)               [UIColor colorWithRed:(float)r/255.0f green:(float)g/255.0f blue:(float)b/255.0f alpha:a]
+//比例缩放
+#define Rect(x,y,width,height) CGRectMake((float)x/SCREEN_WIDTH, (float)y/SCREEN_HEIGHT, (float)width/SCREEN_WIDTH, (float)height/SCREEN_HEIGHT)
+
+
+#define WEAK_VAR_VARNAME(var,name) __weak typeof(var) name = var
+#define WEAKSELF(weakSelf) WEAK_VAR_VARNAME(self,weakSelf)
+
+#define ios8 [[[UIDevice currentDevice] systemVersion ] floatValue] >= 8.0
+
+#define ios7later [[[UIDevice currentDevice] systemVersion ] floatValue] >= 7.0
+
+#define isNilOrNSNull(var) var && (NSNull *)var != [NSNull null]
+
+#define DLOG(fmt, ...) NSLog((@"[DEBUG] %s [Line %d] --- " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+//-------------------获取设备大小-------------------------
+//NavBar高度
+#define NavigationBar_HEIGHT 44
+
+//获取屏幕 宽度、高度
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+//#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+//#define iPhone6 ([[UIScreen mainScreen] currentMode].size.height >= 1334 && [[UIScreen mainScreen] currentMode].size.height <= 2208? YES:NO)
+//#define iPhone6p ([[UIScreen mainScreen] currentMode].size.height >= 2000 ? YES:NO)
+
+//#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+//#define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
+#define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
+#define SCREEN_MIN_LENGTH (MIN(SCREEN_WIDTH, SCREEN_HEIGHT))
+
+#define iPhone4 (IS_IPHONE && SCREEN_MAX_LENGTH < 568.0)
+#define iPhone5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
+#define iPhone6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
+#define iPhone6p (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+
+#define iPadn ([[UIScreen mainScreen] currentMode].size.width == 1536 && [[UIScreen mainScreen] currentMode].size.height == 2048? YES:NO)
+#define iPad2 ([[UIScreen mainScreen] currentMode].size.width == 768 && [[UIScreen mainScreen] currentMode].size.height == 1024? YES:NO)
+
+//-------------------获取设备大小-------------------------
+
+//G－C－D
+#define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+#define MAIN(block) dispatch_async(dispatch_get_main_queue(),block)
+
+//NSUserDefaults 实例化
+#define USER_DEFAULT [NSUserDefaults standardUserDefaults]
+
+
+/// tabbar
+#define TabVC @"vc"
+#define TabTitel @"title"
+#define TabImg @"icon"
+#define TabSelectImg @"selectIcon"
+
+//BFCloud
+#define BFScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define BFScreenHeight [UIScreen mainScreen].bounds.size.height
+#define BFStatusBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height)
+
+#define BFMargin 10
+#define BFButtonW 200
+#define BFButtonH 40
+#define BFButtonX ( (BFScreenWidth - BFButtonW ) * 0.5)
+#define BFSystemVersion ([[[UIDevice currentDevice] systemVersion] floatValue])
+
+
+// 通知状态
+#define kApplicationDidEnterBackground  @"kApplicationDidEnterBackground"
+#define kApplicationDidEnterForeground  @"kApplicationDidEnterForeground"
+#define kApplicationDidBecomeActive     @"kApplicationDidBecomeActive"
+
+
+// URL
+//#define baseUrl @"http://rest.zoxue.cc/v1/"
+//#define baseUrl @"http://192.168.1.25/v2"
+//#define baseUrl @"192.168.1.38/PHP/v2/"
+#define baseUrl @"http://api.fabo.tv/v2/"
+//#define imgUrl @"http://rest.zoxue.cc:81/"
+
+#define imgUrl @"http://img.zoxue.cc/"
+//#define IMG(imgStr) [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",imgUrl,imgStr]]
+
+
+//APPKEY
+#define UMAppKey @"579f236c67e58e5659001711"
+/*
+ MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqN5e9gqEHqeS67rFUBec
+ GVP1bMoMmKNngwHzjxmynLdiHAFKbJKbcg0FLjg0Sbv0EDovoTvfcxEc2wmSii9F
+ 9MAaSqHf2xGags3WIGK9ysQ/qhhFBdiC/n3STTL0nv0vUq3uAzr8llCCkHzClYSB
+ soHUYwYrEyv6O9Ca8gimTGv4f3zZ7p0P2IN12F1phk201u+gSoCia2kExdlTcneX
+ fotLTzxTh3ytsQLfDdBURBWFKqL93SzLxooPXnO262voAxU7BcYvlkl/G8m092GQ
+ WU1Wo3MvGd7kqX3A2Bc7+Ni8v3lp8IdRZd5Px6vDLaP9fHpKsWWvVomT4V6vSSEH
+ fQIDAQAB
+ */
+#define PUBLIC_KEY @"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqN5e9gqEHqeS67rFUBecGVP1bMoMmKNngwHzjxmynLdiHAFKbJKbcg0FLjg0Sbv0EDovoTvfcxEc2wmSii9F9MAaSqHf2xGags3WIGK9ysQ/qhhFBdiC/n3STTL0nv0vUq3uAzr8llCCkHzClYSBsoHUYwYrEyv6O9Ca8gimTGv4f3zZ7p0P2IN12F1phk201u+gSoCia2kExdlTcneXfotLTzxTh3ytsQLfDdBURBWFKqL93SzLxooPXnO262voAxU7BcYvlkl/G8m092GQWU1Wo3MvGd7kqX3A2Bc7+Ni8v3lp8IdRZd5Px6vDLaP9fHpKsWWvVomT4V6vSSEHfQIDAQAB"
+
+#define PRIVATE_KEY @"MIIEpAIBAAKCAQEAqN5e9gqEHqeS67rFUBecGVP1bMoMmKNngwHzjxmynLdiHAFKbJKbcg0FLjg0Sbv0EDovoTvfcxEc2wmSii9F9MAaSqHf2xGags3WIGK9ysQ/qhhFBdiC/n3STTL0nv0vUq3uAzr8llCCkHzClYSBsoHUYwYrEyv6O9Ca8gimTGv4f3zZ7p0P2IN12F1phk201u+gSoCia2kExdlTcneXfotLTzxTh3ytsQLfDdBURBWFKqL93SzLxooPXnO262voAxU7BcYvlkl/G8m092GQWU1Wo3MvGd7kqX3A2Bc7+Ni8v3lp8IdRZd5Px6vDLaP9fHpKsWWvVomT4V6vSSEHfQIDAQABAoIBAQChEvshVQaQ9uZ9U7nBm8OZpSwEiPVa4wJpRAM+DBUCxykd7V1AEteTAjhezd2SN2Wl1Np5wNJyv2/2vjq49D6WJmbtqVoNa80l15DXc1f1gRv48w1jdhH9Dab7XA9ZV8c75guRqUIlXsYra9VvKOVNj+k2SzvrHZeiVmh1VSrK2OTwCQwx3gxNhjIMamPQmcrh6tCmJH/6jT/UaCKBXCO8OkAG0/C7/kLbHWnMV17fHKUaAGspRin+gECjVrfaqQh/Eh+/slOsGYgI8hBmDDD5bFtMp2Y8vOEbJaa/wjWuSu0jRtBXFl0e62ygIV8EyjkC4nVLmB+W5EASyxQSqvABAoGBANxA2BmDJPMo+Uxpm6mFPQ99c2Ngrl3A5rZ+oB4O3G+y4NEaA5+s/HJx2KaXhTVVOHKc3B2JJI10zpbPmcqr/+VwBfpvC6tfFjZEFLR74dcV7eh+EILC6kxNVbqA4qA5W7D5T+0MVOUxuptGT4A9sB8CS/3bl+rY3y6f2BHCypO9AoGBAMRGlIRr0gSGk8uobpmP+zz9AihFAkWWVtI8UGAjEjDNtJVUhoNuloOcmafgohcLMCOQDC3NgddtqzmCgLMbDYMp6qEpsGl9D0uVnjocHFyGSHpL5vQBXn1loSt4Y6HGK1tkc1FkduCd/YXvtcUbbB0QYQwbI1xg0c/mNL+bLZ7BAoGARKIYNOr+6p7MAJmwHgUc3+TRvhf0fdaMjjWrI3KyEkSFdeNLWciH6gm73z28DsB9lIl4teN0dnf9oFUUsWkjlpVv53gPBNnejA5u/UbVOzbkKdyOvJCMfjZjDnj3JcJ55g3qcA21rq3uXlBsmaOfbCpFD9gL4Oyvr1Gz/OTcR2kCgYEAiTdysxUR0VooTzPkhnTzRtL2xCJikTWmYvoJkvxRxk65VcCu/Ym9ris3/PZ9OzD2KZaV/Rt0D6C7GMyUnyJlkvIl9x/HFih5HfVuld97MHAskVspDiM65N29DD/xH3MEcrNKL3fV5/hr+kv4PuGJ9tOxlR4P3ZBOflLJQ77/6MECgYBMAOqETGh+jBehKoIlz5O5ruxAYDjdxlkIaDL3OY/OHXFe5xP5UoHQRa6c3BvZnI88/570CVhjN79fwpHxArKNWwP0aSNGZOyXd0thtHcjwXmb3UUK25rbRl0mgm5wGr23ZgvqHAxE6Elz+vPCSq1Gx14ECt/RD0jK1SI2M/9OSw=="
+
+#define Alipay_Private_Key @"MIICXQIBAAKBgQC/32GAhHymd4EbzcwvE6vQ6s0LKmwZW9rXEBmbYumRM+/RbxrMoRnC6xzsrhqq1QwHzmroOjH/1wj9vVMRs5C8IFRf7iPOLpZmPLdPr0ZlBML/iVT0neMX44Z2OKoG9yRmUcaCbkMjUfCt1MqVXFkytXMkrW90zg54jB/Rnh1L4wIDAQABAoGBAIOaXM8AkFrBhv2iF1WG4YdHNWJeM4zlMuHl+hpZKqjcfbYhxbjrGrdV+h3ggQwBWuIT08H7AIZhYJphfBOdHTypg929I758W8yjsnBNfJQaBcaBhyPwcXIgiHKpArVmFpEfpWDIPlJjwzsaZlipNXh9EzWL0jCIEGOFXO3SlubpAkEA+oJ2Itd4NMnZ9D19L409Q0FeVFCOIk9HXGIWl9HFD3+ezXHC783CGebk3GRxSyOWxuUV83hk/tcEuIznfUj65wJBAMQT7HE7uD51GByhASXYEhI9nDjf8YIIj4erH7z4gC6MOI67rbuvkwQrZHz9URP7b3v4ruOnlyhSi93p4htKI6UCQQCVWHfTl7+bQQeGW64pTjvKv8rb21aRT9BMXFH52t5vufbTplHAI1vnk0a3uc3tLN9z3hlzGEClyUyQNbjAcWTbAkAtBw5DKp2y6hzxZh/nWuk7ex6HCRZi8ChV1XxiXwbAqb7LOFo7QaSXToezFFEsL494frFa4j+aKOqpuW4NKkdpAkAFebHl56K9rB8M+RDQ2veL7I6CBWSzHFPa94m3IB/Zd7ZN5eN2C25sF1/ZtAJPQJcHJeZeCLzJZB3PbSKcHa/b"
+
+
+#define Alipay_Private_pacKey @"MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAL/fYYCEfKZ3gRvNzC8Tq9DqzQsqbBlb2tcQGZti6ZEz79FvGsyhGcLrHOyuGqrVDAfOaug6Mf/XCP29UxGzkLwgVF/uI84ulmY8t0+vRmUEwv+JVPSd4xfjhnY4qgb3JGZRxoJuQyNR8K3UypVcWTK1cyStb3TODniMH9GeHUvjAgMBAAECgYEAg5pczwCQWsGG/aIXVYbhh0c1Yl4zjOUy4eX6GlkqqNx9tiHFuOsat1X6HeCBDAFa4hPTwfsAhmFgmmF8E50dPKmD3b0jvnxbzKOycE18lBoFxoGHI/BxciCIcqkCtWYWkR+lYMg+UmPDOxpmWKk1eH0TNYvSMIgQY4Vc7dKW5ukCQQD6gnYi13g0ydn0PX0vjT1DQV5UUI4iT0dcYhaX0cUPf57NccLvzcIZ5uTcZHFLI5bG5RXzeGT+1wS4jOd9SPrnAkEAxBPscTu4PnUYHKEBJdgSEj2cON/xggiPh6sfvPiALow4jrutu6+TBCtkfP1RE/tve/iu46eXKFKL3eniG0ojpQJBAJVYd9OXv5tBB4ZbrilOO8q/ytvbVpFP0ExcUfna3m+59tOmUcAjW+eTRre5ze0s33PeGXMYQKXJTJA1uMBxZNsCQC0HDkMqnbLqHPFmH+da6Tt7HocJFmLwKFXVfGJfBsCpvss4WjtBpJdOh7MUUSwvj3h+sVriP5oo6qm5bg0qR2kCQAV5seXnor2sHwz5ENDa94vsjoIFZLMcU9r3ibcgH9l3tk3l43YLbmwXX9m0Ak9Alwcl5l4IvMlkHc9tIpwdr9s="
+
+
+#define Alipay_Private_testKey @"MIICXQIBAAKBgQDSKv2TTgYM+Hflhxua2gyOn/P3gz753GzAZTh2xnz+kaB71evRrG/y0E7tu5YtQujpF838hVNtcJaWnKlseFmwaS9sWQAfvoTwt3nk+xDwTZ5h7jhDNKzUscHIDY/nh8J+JJLGqDF3Ny+I5hV0at8AhTq9GJHjJ/wSUKB9/pI/gwIDAQABAoGAZF5Hj0uZtCQNDj6BvmgXyx00Y6X4M1dDUHaGiqKsGt7tJ3a4EgApzmoQ55PIWoEzve2yX8BEYWV9ZRwYBUdMfQaTtpvKSSiUbRNfzlKiDpgc3ZTx1M75s++INdxq5zmA6IlOPAnmQurqaVNzeZo5s/aMFHDdNPfFUUv3DjFGaPECQQD+/Zjjf28mXzdbBjzRbs08QpjJhtwDaLxAfFUIdWn8wY5fxAIvME9JaqCm6XDpMNrIz7HXZ0qXZLu+koM52Lc1AkEA0v/4iEJOQQottQLyXOYhesePetf2hbTRKCErl4q3FxVmtl9zYXH+J6swaCkkbE4NyNm8gvbzzn2lYIiOKMEa1wJBALz0xjhHteE0i/vK+oSkXDg8jaZBZoasNVyABi9XeuwPruauhIPdg9O+zUADG2Xiiy5mIr6hz3ey8SF+xvm168UCQBJ68N2eURRJO++arneMgGosiFiOCb10NM16+kJvl9Ghwjk+6vAh98yppbe5wsLpozNwPp6J2pi/UHi//RN8tkkCQQDl9wF8f5iyiCRvoXzOrn1TBl1AYY51bOoSdM2+aQ5lqoXJAtTrjqwPkwcfWjAbxKszfPPBU/R3KYgbUxnA8kJB"
+
+#define Alipay_Private_testPacKey @"MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBANIq/ZNOBgz4d+WHG5raDI6f8/eDPvncbMBlOHbGfP6RoHvV69Gsb/LQTu27li1C6OkXzfyFU21wlpacqWx4WbBpL2xZAB++hPC3eeT7EPBNnmHuOEM0rNSxwcgNj+eHwn4kksaoMXc3L4jmFXRq3wCFOr0YkeMn/BJQoH3+kj+DAgMBAAECgYBkXkePS5m0JA0OPoG+aBfLHTRjpfgzV0NQdoaKoqwa3u0ndrgSACnOahDnk8hagTO97bJfwERhZX1lHBgFR0x9BpO2m8pJKJRtE1/OUqIOmBzdlPHUzvmz74g13GrnOYDoiU48CeZC6uppU3N5mjmz9owUcN0098VRS/cOMUZo8QJBAP79mON/byZfN1sGPNFuzTxCmMmG3ANovEB8VQh1afzBjl/EAi8wT0lqoKbpcOkw2sjPsddnSpdku76SgznYtzUCQQDS//iIQk5BCi21AvJc5iF6x4961/aFtNEoISuXircXFWa2X3Nhcf4nqzBoKSRsTg3I2byC9vPOfaVgiI4owRrXAkEAvPTGOEe14TSL+8r6hKRcODyNpkFmhqw1XIAGL1d67A+u5q6Eg92D077NQAMbZeKLLmYivqHPd7LxIX7G+bXrxQJAEnrw3Z5RFEk775qud4yAaiyIWI4JvXQ0zXr6Qm+X0aHCOT7q8CH3zKmlt7nCwumjM3A+nonamL9QeL/9E3y2SQJBAOX3AXx/mLKIJG+hfM6ufVMGXUBhjnVs6hJ0zb5pDmWqhckC1OuOrA+TBx9aMBvEqzN888FT9HcpiBtTGcDyQkE="
+
+
+
+#define Alipay_Public_testKey @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDSKv2TTgYM+Hflhxua2gyOn/P3gz753GzAZTh2xnz+kaB71evRrG/y0E7tu5YtQujpF838hVNtcJaWnKlseFmwaS9sWQAfvoTwt3nk+xDwTZ5h7jhDNKzUscHIDY/nh8J+JJLGqDF3Ny+I5hV0at8AhTq9GJHjJ/wSUKB9/pI/gwIDAQAB"
+
+#define Alipay_Public_key @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/32GAhHymd4EbzcwvE6vQ6s0LKmwZW9rXEBmbYumRM+/RbxrMoRnC6xzsrhqq1QwHzmroOjH/1wj9vVMRs5C8IFRf7iPOLpZmPLdPr0ZlBML/iVT0neMX44Z2OKoG9yRmUcaCbkMjUfCt1MqVXFkytXMkrW90zg54jB/Rnh1L4wIDAQAB"
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+
+#define BOOKRANK_KEY @"BookRank_key" /// 排行
+#define BOOKRANKDETAIL_KEY @"BookRankDetail_key" /// 排行详情
+#define BOOKSHELF_KEY @"BookShelf_key" /// 书架
+#define BOOKCHAPTERS_KEY @"BookChapters_key" ///章节目录
+
+
+#define BOOKCATEGORY_KEY @"BookCategory_key"
+
+
+
+
+
+
+
+#endif /* PrefixHeader_pch */

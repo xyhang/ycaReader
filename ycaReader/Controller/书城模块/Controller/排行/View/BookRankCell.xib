@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="bookRankCell" id="KGk-i7-Jjw" customClass="BookRankCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="342" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hot" translatesAutoresizingMaskIntoConstraints="NO" id="swu-TF-ZOo">
+                        <rect key="frame" x="10" y="9" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="Duw-rO-dAA"/>
+                            <constraint firstAttribute="width" constant="32" id="jwD-jm-d8e"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XvI-l1-N7V">
+                        <rect key="frame" x="50" y="5" width="304" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdD-Qo-AuQ">
+                                <rect key="frame" x="8" y="12" width="29" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="Sw8-HD-ZmZ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="29" id="cbf-DQ-nbE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LdD-Qo-AuQ" firstAttribute="centerY" secondItem="XvI-l1-N7V" secondAttribute="centerY" id="KpZ-MN-LuA"/>
+                            <constraint firstItem="LdD-Qo-AuQ" firstAttribute="leading" secondItem="XvI-l1-N7V" secondAttribute="leading" constant="8" id="cgS-dF-5IZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XvI-l1-N7V" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0Ca-m6-VS5"/>
+                    <constraint firstItem="XvI-l1-N7V" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="6X3-ld-yoj"/>
+                    <constraint firstItem="XvI-l1-N7V" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AjA-X8-Qut"/>
+                    <constraint firstItem="swu-TF-ZOo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="H48-yl-2qe"/>
+                    <constraint firstItem="swu-TF-ZOo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Znk-TI-VAr"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="XvI-l1-N7V" secondAttribute="trailing" constant="-20" id="fjP-WD-NM9"/>
+                    <constraint firstItem="XvI-l1-N7V" firstAttribute="leading" secondItem="swu-TF-ZOo" secondAttribute="trailing" constant="8" id="jnC-On-kmK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="rankBackView" destination="XvI-l1-N7V" id="I9F-65-79a"/>
+                <outlet property="rankTitle" destination="LdD-Qo-AuQ" id="zSs-Tt-BFV"/>
+            </connections>
+            <point key="canvasLocation" x="-304.5" y="115"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="hot" width="32" height="32"/>
+    </resources>
+</document>
